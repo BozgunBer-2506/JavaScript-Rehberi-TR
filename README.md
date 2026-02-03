@@ -1,4 +1,4 @@
-# JavaScript Kitabı (Türkçe)
+# JavaScript Kitabı (TR)
 
 Bu repo, **JavaScript’i sıfırdan öğrenmek isteyenler** ve
 temellerini sağlamlaştırmak isteyenler için hazırlanmış
@@ -37,11 +37,45 @@ Her bölüm:
 
 ## 📚 Bölümler
 
-- 01 - Başlangıç
-- 02 - Kapsam ve Kapanış (Scope & Closures)
-- 03 - Nesneler ve Sınıflar (Objects & Classes)
-- 04 - Tipler ve Dilbilgisi (Types & Grammar)
-- 05 - Ekstralar (yakında)
+- **01 - Başlangıç**  
+  Değişkenler, veri tipleri, operatörler, karar yapıları ve temel program akışı.  
+  → JavaScript’e ilk adımlar, mantığı anlamak ve küçük örnekler.  
+
+- **02 - Fonksiyonlar**  
+  Fonksiyon tanımı, arrow functions, IIFE, callbacks ve recursion.  
+  → Fonksiyon kavramı, parametre ve dönüş değerleri, modern fonksiyon kullanımı.  
+
+- **03 - Nesneler ve Sınıflar (Objects & Classes)**  
+  Nesne oluşturma, özellikler, metotlar, `this`, constructor ve class kullanımı.  
+  → Nesne tabanlı programlama temelleri, ES6 sınıfları.  
+
+- **04 - Diziler ve Objeler**  
+  Array ve Object metodları, destructuring, spread/rest operatörleri, Set ve Map yapıları.  
+  → Veri koleksiyonlarını yönetme ve modern JS veri yapıları.  
+
+- **05 - Ekstralar**  
+  Temel alıştırmalar, debugging ipuçları ve örnek çözümler.  
+  → Öğrenilenleri pekiştirmek için pratik uygulamalar.  
+
+- **06 - DOM ve Event Handling**  
+  DOM nedir, element seçimi, event listener kullanımı ve formlar.  
+  → Web sayfasıyla etkileşim, kullanıcı girişleri ve olay yönetimi.  
+
+- **07 - Hata Yönetimi ve Debugging**  
+  try/catch/finally, throw kullanımı ve debugging teknikleri.  
+  → Kod hatalarını yakalama, çözme ve hata ayıklama stratejileri.  
+
+- **08 - Modules ve ES6+**  
+  import/export, modern ES6+ özellikleri, ileri seviye sözdizimi.  
+  → Modüler yapı, temiz ve tekrar kullanılabilir kod yazımı.  
+
+- **09 - RegExp ve Misc**  
+  RegExp, optional chaining, nullish coalescing, generator ve iterator yapıları.  
+  → Gelişmiş JavaScript teknikleri ve kısa yollar.  
+
+- **10 - Ekstralar İleri Seviye**  
+  Mini projeler, best practices ve ek kaynaklar.  
+  → Uygulamalı örnekler ve ileri seviye öneriler.  
 
 ---
 
@@ -65,8 +99,9 @@ Bu yapı, öğrenme sürecini **aktif** tutmak için özellikle seçilmiştir.
 2. VS Code ile açın
 3. Markdown önizleme:
 
-   * macOS: `Cmd + Shift + V`
-   * Windows: `Ctrl + Shift + V`
+   * **macOS:** `Cmd + Shift + V`
+   * **Windows:** `Ctrl + Shift + V`
+   * **Linux:** `Ctrl + Shift + V`
 
 ---
 
