@@ -71,7 +71,7 @@ npm run dev
 ```
 
 
-*Uygulama varsayılan olarak `http://localhost:5173` adresinde çalışacaktır.*
+*Uygulama varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.*
 
 ---
 
