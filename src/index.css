@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.prose pre, 
+div[class*="language-"] pre,
+pre {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+  max-width: 100% !important;
+}
+
+aside {
+  min-width: 260px !important;
+}
+
+nav button span {
+  word-break: normal !important;
+  white-space: nowrap;
+}

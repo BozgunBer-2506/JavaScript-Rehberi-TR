@@ -22,8 +22,4 @@ SOFTWARE.
 
 Lisans
 
-Bu proje **MIT Lisansı** ile lisanslanmıştır.  
-
-<p align="center">
-  Crafted by <strong>The_Bozgun</strong> © 2026
-</p>
+Bu proje **MIT Lisansı** ile lisanslanmıştır. 
