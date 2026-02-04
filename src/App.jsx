@@ -21,17 +21,18 @@ function App() {
       
       {/* Mobil Header */}
       <header className="lg:hidden bg-[#1e293b] border-b border-slate-700 p-4 sticky top-0 z-50 flex justify-between items-center">
-        <div className="flex items-center gap-2" onClick={() => setSeciliBolum(null)}>
+        <div className="flex items-center gap-2" onClick={() => { setSeciliBolum(null); setIsSidebarOpen(false); }}>
           <div className="bg-[#f7df1e] w-8 h-8 rounded flex items-center justify-center">
             <Code2 className="text-black w-5 h-5" strokeWidth={3} />
           </div>
-          <span className="font-black text-white text-xs tracking-tighter uppercase">JS REHBERİ</span>
+          <span className="font-black text-white text-xs tracking-tighter uppercase">JAVASCRIPT TÜRKÇE</span>
         </div>
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-[#f7df1e] text-xs font-black uppercase">
           {isSidebarOpen ? 'KAPAT' : 'MENÜ'}
         </button>
       </header>
 
+      {/* Sidebar */}
       <aside className={`fixed lg:sticky top-0 h-screen w-80 bg-[#1e293b] border-r border-slate-700 transform transition-transform duration-300 z-40 flex flex-col shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="p-6 flex-1 flex flex-col min-w-0 overflow-hidden">
           
@@ -40,7 +41,7 @@ function App() {
               <Code2 className="text-black w-7 h-7" strokeWidth={3} />
             </div>
             <div className="text-center">
-              <h1 className="text-xl font-black text-white tracking-[0.2em] leading-none mb-1">JAVASCRIPT</h1>
+              <h1 className="text-xl font-black text-white tracking-[0.2em] leading-none mb-1 uppercase">JAVASCRIPT</h1>
               <span className="text-[9px] text-[#f7df1e] font-bold tracking-[0.3em] uppercase opacity-70">TÜRKÇE REHBER</span>
             </div>
           </div>
@@ -119,9 +120,12 @@ function App() {
             
             <div className="bg-[#1e293b] border border-slate-700/50 px-10 py-8 rounded-3xl shadow-2xl max-w-xl relative overflow-hidden">
                <div className="absolute top-0 left-0 w-2 h-full bg-[#f7df1e]"></div>
-               <p className="text-slate-100 text-xl lg:text-3xl font-black tracking-tight mb-2">JavaScript Türkçe Rehberi</p>
+               <p className="text-slate-100 text-xl lg:text-3xl font-black tracking-tight mb-2 uppercase">JavaScript Türkçe Rehberi</p>
                <p className="text-slate-400 text-sm lg:text-base font-medium mt-4">
-                 <span className="text-[#f7df1e] uppercase tracking-widest font-bold">Sol taraftan</span> bir modül seç ve hemen öğrenmeye başla.
+                 <span className="text-[#f7df1e] uppercase tracking-widest font-bold">
+                   <span className="hidden lg:inline">Sol taraftan</span>
+                   <span className="lg:hidden">Yukarıdaki menüden</span>
+                 </span> bir modül seç ve hemen öğrenmeye başla.
                </p>
             </div>
           </div>
