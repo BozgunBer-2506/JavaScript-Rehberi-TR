@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ChevronRight, Code2, Search } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -11,21 +11,6 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [seciliBolum, setSeciliBolum] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    const checkGoogleTranslate = setInterval(() => {
-      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'tr',
-          includedLanguages: 'en,tr',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element');
-        clearInterval(checkGoogleTranslate);
-      }
-    }, 1000);
-    return () => clearInterval(checkGoogleTranslate);
-  }, []);
 
   const filteredBolumler = tumBolumler.filter(bolum =>
     bolum.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -90,9 +75,6 @@ function App() {
           </nav>
 
           <div className="mt-4 pt-4 border-t border-slate-700/50 text-center">
-            {/* Google Translate Box */}
-            <div id="google_translate_element" className="mb-4 flex justify-center scale-90"></div>
-            
             <p className="text-[10px] font-black text-[#f7df1e] tracking-widest uppercase opacity-40">THE_BOZGUN</p>
           </div>
         </div>
@@ -157,22 +139,6 @@ function App() {
       <style dangerouslySetInnerHTML={{ __html: `
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        /* Google Translate Styling */
-        .goog-te-gadget-simple {
-          background-color: #1e293b !important;
-          border: 1px solid #334155 !important;
-          padding: 4px 8px !important;
-          border-radius: 6px !important;
-          cursor: pointer !important;
-        }
-        .goog-te-gadget-simple span {
-          color: #f7df1e !important;
-          font-size: 11px !important;
-          font-weight: bold !important;
-          text-transform: uppercase !important;
-        }
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
       `}} />
     </div>
   );
