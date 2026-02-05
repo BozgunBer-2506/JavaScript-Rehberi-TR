@@ -165,7 +165,7 @@ function App() {
                <p className="text-slate-400 text-sm lg:text-base font-medium mt-4">
                  <span className="text-[#f7df1e] uppercase tracking-widest font-bold">
                    <span className="hidden lg:inline">Sol taraftan</span>
-                   <span className="lg:hidden">Yukarıdaki menüden</span>
+                   <span className="lg:hidden">Menüden</span>
                  </span> bir modül seç ve hemen öğrenmeye başla.
                </p>
             </div>
