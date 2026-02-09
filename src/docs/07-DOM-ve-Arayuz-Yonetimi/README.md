@@ -78,9 +78,9 @@ btn.addEventListener("click", function() {
 <summary><b>1. Renk Değiştirici Çözümü</b> (Tıklayın)</summary>
 
 ```javascript
-const buton = document.querySelector("#renk-btn");
+const button = document.querySelector("#renk-btn");
 
-buton.addEventListener("click", () => {
+button.addEventListener("click", () => {
     document.body.style.backgroundColor = "lightblue";
 });
 
@@ -93,11 +93,11 @@ buton.addEventListener("click", () => {
 
 ```javascript
 const input = document.querySelector("#kullanici-input");
-const paragraf = document.querySelector("#sonuc-yazi");
-const buton = document.querySelector("#yazdir-btn");
+const paragraph = document.querySelector("#sonuc-yazi");
+const button = document.querySelector("#yazdir-btn");
 
 buton.addEventListener("click", () => {
-    paragraf.innerText = input.value;
+    paragraph.innerText = input.value;
 });
 
 ```
