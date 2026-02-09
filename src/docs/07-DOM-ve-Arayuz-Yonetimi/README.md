@@ -96,7 +96,7 @@ const input = document.querySelector("#kullanici-input");
 const paragraph = document.querySelector("#sonuc-yazi");
 const button = document.querySelector("#yazdir-btn");
 
-buton.addEventListener("click", () => {
+button.addEventListener("click", () => {
     paragraph.innerText = input.value;
 });
 
