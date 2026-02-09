@@ -65,7 +65,7 @@ function App() {
             <div className="text-center">
               <h1 className="text-xl font-black text-white tracking-[0.2em] leading-none mb-1 uppercase">JAVASCRIPT</h1>
               <span className="text-[9px] text-[#f7df1e] font-bold tracking-[0.3em] uppercase block">REHBERİ</span>
-              <span className="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-3 block border-t border-slate-700/30 pt-2 italic">Yavuz Bahadır Özgün</span>
+              <span className="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-3 block border-t border-slate-700/30 pt-2 italic">Yavuz Baris Özgün</span>
             </div>
           </div>
           
