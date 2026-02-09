@@ -79,4 +79,4 @@ npm run dev
 
 **The_Bozgun** [](https://www.google.com/search?q=https://github.com/BozgunBer-2506)
 
-**Lisans:** MIT
+**Lisans:** MIT 2026
