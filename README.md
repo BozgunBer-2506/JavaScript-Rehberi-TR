@@ -1,12 +1,52 @@
-# 📚 Modern JavaScript Türkçe Rehberi
+# 📚 Modern JavaScript Guide
+
+[English](#english) | [Türkçe](#türkçe)
+
+---
+
+<a name="english"></a>
+## 🇬🇧 English Version
+
+This platform is a **Live** learning application that dynamically transforms Markdown-based content into an interactive educational interface using React. It consists of 17 modules ranging from basic to advanced levels.
+
+**🌐 Live Application:** [JavaScript Guide (Vercel)](https://java-script-rehberi-tr.vercel.app/)
+
+### 🚀 Live Educational Experience with React
+The standout feature of this project is that educational contents are rendered live through React components:
+* **Dynamic Rendering:** Markdown content is processed instantly via `react-markdown`.
+* **Interactive Code Structure:** Code blocks are not just text; they are syntax-highlighted and mobile-friendly.
+* **React State Management:** Navigation between modules and menu management happens seamlessly as a Single Page Application (SPA).
+
+### 🛠️ Tech Stack
+* **React 18:** UI and component architecture.
+* **Vite:** Fast development and optimized build process.
+* **Tailwind CSS:** Modern, responsive styling.
+* **Lucide React:** Minimalist icon library.
+* **React Markdown:** Markdown to React component converter.
+* **Prism React Syntax Highlighter:** Professional syntax highlighting.
+
+### 🏗️ Project Architecture
+```text
+JAVASCRIPT-REHBERI-TR/
+├── docs/               # 📂 17 Modules of Markdown Content
+├── src/                # ⚙️ React Application Engine
+│   ├── App.jsx         # Main App & Markdown Processor
+│   ├── data.js         # Content Bridge (Markdown Loader)
+│   └── main.jsx        # Entry Point
+
+```
+
+---
+
+<a name="türkçe"></a>
+
+## 🇹🇷 Türkçe Versiyon
 
 Bu platform, Markdown tabanlı içerikleri React kullanarak dinamik bir eğitim arayüzüne dönüştüren **Live (Canlı)** bir öğrenme platformudur. Temelden ileri seviyeye 17 modülden oluşur.
 
 **🌐 Canlı Uygulama:** [JavaScript Rehberi (Vercel)](https://java-script-rehberi-tr.vercel.app/)
 
----
-
-## 🚀 React ile Live Eğitim Deneyimi
+### 🚀 React ile Live Eğitim Deneyimi
 
 Bu projenin en büyük özelliği, eğitim içeriklerinin React bileşenleri üzerinden canlı olarak render edilmesidir:
 
@@ -14,69 +54,28 @@ Bu projenin en büyük özelliği, eğitim içeriklerinin React bileşenleri üz
 * **İnteraktif Kod Yapısı:** Kod blokları sadece metin değil; renklendirilmiş, okunabilirliği artırılmış ve mobil uyumlu yapılardır.
 * **React State Yönetimi:** Modüller arası geçişler ve menü yönetimi React state'leri ile hızlı ve kesintisiz (SPA) bir şekilde gerçekleşir.
 
----
+### 🛠️ Kullanılan Teknolojiler
 
-## 🛠️ Kullanılan Teknolojiler
-
-Bu proje modern web ekosisteminin en güçlü araçlarıyla inşa edilmiştir:
-
-* **React 18:** Kullanıcı arayüzü ve bileşen mimarisi.
-* **Vite:** Hızlı geliştirme ortamı ve optimize edilmiş build süreci.
-* **Tailwind CSS:** Modern, responsive ve hızlı stil yönetimi.
-* **Lucide React:** Minimalist ve şık ikon kütüphanesi.
-* **React Markdown:** Markdown dosyalarını React bileşenlerine dönüştürücü.
-* **Prism React Syntax Highlighter:** Kod blokları için profesyonel renlendirme.
+* **React 18**, **Vite**, **Tailwind CSS**, **Lucide React**, **React Markdown**, **Prism React Syntax Highlighter**.
 
 ---
 
-## 🏗️ Proje Mimarisi
+## 💻 Installation (Kurulum)
 
-```text
-JAVASCRIPT-REHBERI-TR/
-├── docs/                     # 📂 17 Modüllü Markdown İçerikleri
-├── src/                      # ⚙️ React Uygulama Motoru
-│   ├── App.jsx               # Ana Uygulama & Markdown İşleyici
-│   ├── data.js               # İçerik Veri Köprüsü (Markdown Loader)
-│   └── main.jsx              # Giriş Noktası
-├── package.json              # Bağımlılıklar ve Komutlar
-└── README.md                 # Teknik Kılavuz
-
-```
-
----
-
-## 💻 Yerel Kurulum ve Çalıştırma
-
-Projeyi kendi bilgisayarınızda çalıştırmak için şu adımları izleyin:
-
-1. **Projeyi Klonlayın:**
 ```bash
+# Clone the project / Projeyi klonlayın
 git clone [https://github.com/BozgunBer-2506/javascript-rehberi-tr.git](https://github.com/BozgunBer-2506/javascript-rehberi-tr.git)
 cd javascript-rehberi-tr
 
-```
-
-
-2. **Bağımlılıkları Yükleyin:**
-```bash
+# Install dependencies / Bağımlılıkları yükleyin
 npm install
 
-```
-
-
-3. **Geliştirme Sunucusunu Başlatın:**
-```bash
+# Start development server / Sunucuyu başlatın
 npm run dev
-
 ```
 
+## 👨‍💻 Developer
 
-*Uygulama varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.*
+**Yavuz Barış Özgün (The_Bozgun)**
 
----
-
-## 👨‍💻 Geliştirici
-
-**The_Bozgun** [](https://www.google.com/search?q=https://github.com/BozgunBer-2506)
-
-**Lisans:** MIT 2026
+**License:** MIT 2026
