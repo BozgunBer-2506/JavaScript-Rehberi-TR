@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronRight, ChevronLeft, ChevronUp, Code2, Search, GraduationCap } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -9,32 +9,35 @@ import { tumBolumler } from './data';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const mainRef = useRef(null);
+  const topRef = useRef(null);
+
   const [seciliBolum, setSeciliBolum] = useState(() => {
     const saved = localStorage.getItem('lastJavaScriptSectionId');
     return saved ? tumBolumler.find(b => b.id === parseInt(saved)) : null;
   });
-  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     if (seciliBolum) {
       localStorage.setItem('lastJavaScriptSectionId', seciliBolum.id);
-      setTimeout(() => {
-        const main = document.querySelector('main');
-        if (main) {
-          main.scrollTop = 0;
-        }
-      }, 0);
+
+      if (topRef.current) {
+        topRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+      } else if (mainRef.current) {
+        mainRef.current.scrollTop = 0;
+      }
     }
   }, [seciliBolum]);
-
-  const filteredBolumler = tumBolumler.filter(bolum =>
-    bolum.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   const sayfaDegistir = (bolum) => {
     setSeciliBolum(bolum);
     setIsSidebarOpen(false);
   };
+
+  const filteredBolumler = tumBolumler.filter(bolum =>
+    bolum.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const sonrakiSayfa = () => {
     const currentIndex = tumBolumler.findIndex(b => b.id === seciliBolum.id);
@@ -52,7 +55,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-100 flex flex-col lg:flex-row overflow-hidden font-sans">
-
       <header className="lg:hidden bg-[#1e293b] border-b border-slate-700 p-4 sticky top-0 z-50 flex justify-between items-center">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => sayfaDegistir(null)}>
           <div className="bg-[#f7df1e] w-8 h-8 rounded flex items-center justify-center">
@@ -69,7 +71,6 @@ function App() {
 
       <aside className={`fixed lg:sticky top-0 h-screen w-80 bg-[#1e293b] border-r border-slate-700 transform transition-transform duration-300 z-40 flex flex-col shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="p-6 flex-1 flex flex-col min-w-0 overflow-hidden">
-
           <div className="hidden lg:flex flex-col items-center justify-center mb-8 w-full cursor-pointer" onClick={() => sayfaDegistir(null)}>
             <div className={`bg-[#f7df1e] w-12 h-12 rounded-xl flex items-center justify-center shadow-lg mb-4 transition-all duration-500 ${seciliBolum ? 'scale-100 opacity-100' : 'scale-100 opacity-100 rotate-3'}`}>
               <Code2 className="text-black w-7 h-7" strokeWidth={3} />
@@ -85,7 +86,7 @@ function App() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
             <input
               type="text"
-              placeholder="Modül ara..."
+              placeholder="İçerik ara..."
               className="w-full bg-[#0f172a] border border-slate-700 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-[#f7df1e] text-white"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -106,13 +107,18 @@ function App() {
 
           <div className="mt-4 pt-4 border-t border-slate-700/50 text-center">
             <p className="text-[9px] font-bold text-slate-500 tracking-widest uppercase">
-              Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline decoration-2 underline-offset-4 transition-all">The_Bozgun</a> 2026
+              Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline">The_Bozgun</a> 2026
             </p>
           </div>
         </div>
       </aside>
 
-      <main className="flex-1 overflow-y-auto h-screen bg-[#0f172a] scrollbar-hide relative">
+      <main
+        ref={mainRef}
+        className="flex-1 overflow-y-auto h-screen bg-[#0f172a] scrollbar-hide relative"
+      >
+        <span ref={topRef} className="absolute top-0 left-0 w-px h-px opacity-0 pointer-events-none" />
+
         {seciliBolum ? (
           <div className="p-6 lg:p-12 max-w-4xl mx-auto w-full pb-24 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <article className="max-w-none">
@@ -128,18 +134,18 @@ function App() {
                   h3: ({ children }) => <h3 className="text-lg lg:text-xl font-bold text-[#f7df1e] mt-6 mb-3 tracking-tight">{children}</h3>,
                   p: ({ children }) => <p className="text-slate-300 leading-relaxed mb-4 text-sm lg:text-[15px]">{children}</p>,
                   li: ({ children }) => <li className="text-slate-300 ml-4 list-disc mb-2 text-sm lg:text-[15px]">{children}</li>,
-                  details: ({ node, children, ...props }) => (
+                  details: ({ children, ...props }) => (
                     <details {...props} className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 my-4">
                       {children}
                     </details>
                   ),
-                  summary: ({ node, children, ...props }) => (
+                  summary: ({ children, ...props }) => (
                     <summary {...props} className="flex items-center gap-2 cursor-pointer font-bold text-[#f7df1e] list-none hover:opacity-80">
                       <GraduationCap size={16} />
                       {children}
                     </summary>
                   ),
-                  code({ node, inline, className, children, ...props }) {
+                  code({ inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '');
                     return !inline && match ? (
                       <div className="w-full overflow-hidden rounded-xl my-6 border border-slate-800 shadow-xl">
@@ -180,19 +186,14 @@ function App() {
             <div className="bg-[#f7df1e] w-24 h-24 lg:w-32 lg:h-32 rounded-3xl flex items-center justify-center shadow-2xl mb-10 rotate-3 animate-bounce-slow">
               <Code2 className="text-black w-12 h-12 lg:w-16 lg:h-16" strokeWidth={3} />
             </div>
-
             <h2 className="text-5xl lg:text-8xl font-black text-white mb-8 tracking-tighter uppercase italic opacity-90 leading-none">Hello World</h2>
-
             <div className="bg-[#1e293b] border border-slate-700/50 px-10 py-8 rounded-3xl shadow-2xl max-w-xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-2 h-full bg-[#f7df1e]"></div>
               <p className="text-slate-100 text-xl lg:text-3xl font-black tracking-tight mb-2 uppercase">
                 JavaScript Türkçe Rehberi
               </p>
               <p className="text-slate-400 text-sm lg:text-base font-medium mt-4">
-                <span className="text-[#f7df1e] uppercase tracking-widest font-bold">
-                  <span className="hidden lg:inline">Menüden</span>
-                  <span className="lg:hidden">Menüden</span>
-                </span> bir konu seç ve hemen öğrenmeye başla.
+                <span className="text-[#f7df1e] uppercase tracking-widest font-bold">Menüden</span> bir konu seç ve hemen öğrenmeye başla.
               </p>
             </div>
           </div>
@@ -201,9 +202,9 @@ function App() {
         {seciliBolum && (
           <button
             onClick={() => {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-              const main = document.querySelector('main');
-              if (main) main.scrollTop = 0;
+              if (topRef.current) {
+                topRef.current.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
             className="fixed bottom-6 right-6 bg-[#f7df1e] text-black p-3 rounded-xl shadow-2xl hover:scale-110 transition-all z-50"
           >
