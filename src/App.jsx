@@ -201,6 +201,7 @@ function App() {
         {seciliBolum && (
           <button
             onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
               const main = document.querySelector('main');
               if (main) main.scrollTop = 0;
             }}
