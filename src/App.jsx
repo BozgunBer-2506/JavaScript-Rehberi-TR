@@ -184,7 +184,7 @@ function App() {
             <div className="bg-[#1e293b] border border-slate-700/50 px-10 py-8 rounded-3xl shadow-2xl max-w-xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-2 h-full bg-[#f7df1e]"></div>
               <p className="text-slate-100 text-xl lg:text-3xl font-black tracking-tight mb-2 uppercase">
-                JavaScript Eğitim Rehberi
+                JavaScript Egitim Rehberi
               </p>
               <p className="text-slate-400 text-sm lg:text-base font-medium mt-4">
                 <span className="text-[#f7df1e] uppercase tracking-widest font-bold">Menüden</span> bir konu seç ve hemen öğrenmeye başla.
