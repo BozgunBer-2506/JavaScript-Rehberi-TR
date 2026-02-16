@@ -1,24 +1,23 @@
-const markdownDosyalari = import.meta.glob('./docs/**/*.md', { query: '?raw', eager: true });
-const dosyaYollari = Object.keys(markdownDosyalari);
+const markdownFiles = import.meta.glob('./docs/**/*.md', { query: '?raw', eager: true });
+const filePaths = Object.keys(markdownFiles);
 
-export const tumBolumler = dosyaYollari.map((yol) => {
-  const icerik = markdownDosyalari[yol].default;
+export const allModules = filePaths.map((path) => {
+  const content = markdownFiles[path].default;
 
-  const parcalar = yol.split('/');
-  const klasorAdi = parcalar[parcalar.length - 2];
-  const idMatch = klasorAdi.match(/^\d+/);
+  const parts = path.split('/');
+  const folderName = parts[parts.length - 2]; // keep folder name TR
+  const idMatch = folderName.match(/^\d+/);
   const id = idMatch ? parseInt(idMatch[0]) : 999;
 
-  const satirlar = icerik.split('\n');
-  const ilkSatir = satirlar.find(s => s.trim().startsWith('#'));
-  const temizBaslik = ilkSatir
-    ? ilkSatir.replace(/^#+\s*/, '').trim()
-    : klasorAdi.replace(/^\d+-/, '').replace(/-/g, ' ');
+  const lines = content.split('\n');
+  const firstLine = lines.find(line => line.trim().startsWith('#'));
+  const title = firstLine
+    ? firstLine.replace(/^#+\s*/, '').trim() // TR literal
+    : folderName.replace(/^\d+-/, '').replace(/-/g, ' '); // fallback TR
 
   return {
     id: id,
-    title: temizBaslik,
-    content: icerik
+    title: title,   // TR literal for UI
+    content: content // TR literal for UI
   };
-})
-  .sort((a, b) => a.id - b.id);
+}).sort((a, b) => a.id - b.id);
