@@ -6,6 +6,8 @@ import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { allModules } from './data';
+import JSLogo from './images/JSlogo.png';
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
