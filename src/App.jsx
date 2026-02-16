@@ -61,7 +61,7 @@ function App() {
             <Code2 className="text-black w-5 h-5" strokeWidth={3} />
           </div>
           <span className="font-black text-white text-xs tracking-tighter uppercase">
-            JAVASCRIPT EGITIM REHBERI
+            Javascript Egitim Rehberi
           </span>
         </div>
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-[#f7df1e] text-xs font-black uppercase">
