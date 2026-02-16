@@ -71,14 +71,13 @@ function App() {
       <aside className={`fixed lg:sticky top-0 h-screen w-80 bg-[#1e293b] border-r border-slate-700 transform transition-transform duration-300 z-40 flex flex-col shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="p-6 flex-1 flex flex-col min-w-0 overflow-hidden">
           <div className="hidden lg:flex flex-col items-center justify-center mb-8 w-full cursor-pointer" onClick={() => changePage(null)}>
-            <img src="/src/images/JSlogo.png" alt="JS Logo" className="w-16 h-16 mb-4" />
+            <img src={JSLogo} alt="JS Logo" className="w-12 h-12 h-auto mb-4" />
             <div className="text-center">
               <h1 className="text-xl font-black text-white tracking-[0.2em] leading-none mb-1 uppercase">JAVASCRIPT</h1>
               <span className="text-[9px] text-[#f7df1e] font-bold tracking-[0.3em] uppercase block">REHBERİ</span>
               <span className="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-3 block border-t border-slate-700/30 pt-2 italic">Yavuz Barış Özgün</span>
             </div>
           </div>
-
 
           <div className="relative mb-6">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
@@ -179,7 +178,7 @@ function App() {
         ) : (
           <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 animate-in fade-in duration-700">
             <div className="flex items-center justify-center mb-4 transition-all duration-500">
-              <img src="/src/images/JSlogo.png" alt="JS Logo" className="w-48 h-48" />
+              <img src={JSLogo} alt="JS Logo" className="w-48 h-48" />
             </div>
             <h2 className="text-5xl lg:text-8xl font-black text-white mb-8 tracking-tighter uppercase italic opacity-90 leading-none">Hello World</h2>
             <div className="bg-[#1e293b] border border-slate-700/50 px-10 py-8 rounded-3xl shadow-2xl max-w-xl relative overflow-hidden">
