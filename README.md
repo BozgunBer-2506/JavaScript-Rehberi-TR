@@ -73,9 +73,11 @@ npm install
 # Start development server / Sunucuyu başlatın
 npm run dev
 ```
+---
+## License
 
-## 👨‍💻 Developer
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. See the [LICENSE](LICENSE) file for more details.
 
-**Yavuz Barış Özgün (The_Bozgun)**
+---
+**Crafted by The_Bozgun**
 
-**License:** MIT 2026
