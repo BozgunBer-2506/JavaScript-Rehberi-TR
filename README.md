@@ -64,7 +64,7 @@ Bu projenin en büyük özelliği, eğitim içeriklerinin React bileşenleri üz
 
 ```bash
 # Clone the project / Projeyi klonlayın
-git clone [https://github.com/BozgunBer-2506/javascript-rehberi-tr.git](https://github.com/BozgunBer-2506/javascript-rehberi-tr.git)
+git clone https://github.com/BozgunBer-2506/javascript-rehberi-tr.git
 cd javascript-rehberi-tr
 
 # Install dependencies / Bağımlılıkları yükleyin
