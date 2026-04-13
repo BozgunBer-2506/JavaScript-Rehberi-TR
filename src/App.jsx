@@ -106,6 +106,7 @@ function App() {
             <p className="text-[9px] font-bold text-slate-500 tracking-widest uppercase">
               Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline">The_Bozgun</a> 2026
             </p>
+            <a href="https://thebozgun.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold text-slate-500 hover:text-[#f7df1e] transition-colors tracking-widest uppercase">thebozgun.com</a>
           </div>
         </div>
       </aside>
