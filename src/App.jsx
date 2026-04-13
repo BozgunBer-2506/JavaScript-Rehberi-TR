@@ -103,10 +103,10 @@ function App() {
           </nav>
 
           <div className="mt-4 pt-4 border-t border-slate-700/50 text-center">
-            <p className="text-[9px] font-bold text-slate-500 tracking-widest uppercase">
-              Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline">The_Bozgun</a> 2026
-            </p>
-            <a href="https://thebozgun.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold text-slate-500 hover:text-[#f7df1e] transition-colors tracking-widest uppercase">thebozgun.com</a>
+            <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-[#f7df1e] tracking-widest">The_Bozgun</a>
+            <br />
+            <a href="https://thebozgun.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold text-slate-500 hover:text-[#f7df1e] transition-colors tracking-widest mt-1 inline-block">thebozgun.com</a>
+            <p className="text-[9px] text-slate-600 font-bold tracking-widest mt-1">© 2026</p>
           </div>
         </div>
       </aside>
