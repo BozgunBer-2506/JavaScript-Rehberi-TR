@@ -106,6 +106,7 @@ function App() {
             <p className="text-[9px] font-bold text-slate-500 tracking-widest uppercase">
               Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline">The_Bozgun</a> 2026
             </p>
+            <div id="google_translate_element" className="mt-3" />
           </div>
         </div>
       </aside>
@@ -142,13 +143,13 @@ function App() {
                   code({ inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '');
                     return !inline && match ? (
-                      <div className="w-full overflow-hidden rounded-xl my-6 border border-slate-800 shadow-xl">
+                      <div translate="no" className="notranslate w-full overflow-hidden rounded-xl my-6 border border-slate-800 shadow-xl">
                         <SyntaxHighlighter style={atomDark} language={match[1]} PreTag="div" customStyle={{ margin: 0, padding: '20px', background: '#0d1117', fontSize: '13px' }} {...props}>
                           {String(children).replace(/\n$/, '')}
                         </SyntaxHighlighter>
                       </div>
                     ) : (
-                      <code className="bg-slate-800 text-[#f7df1e] px-1.5 py-0.5 rounded text-[12px] font-mono border border-slate-700/50" {...props}>{children}</code>
+                      <code translate="no" className="notranslate bg-slate-800 text-[#f7df1e] px-1.5 py-0.5 rounded text-[12px] font-mono border border-slate-700/50" {...props}>{children}</code>
                     );
                   },
                 }}
