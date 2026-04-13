@@ -54,6 +54,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-100 flex flex-col lg:flex-row overflow-hidden font-sans">
+      <style>{`
+        .goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display: none !important; }
+        .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
+        .goog-te-combo { background-color: rgba(30,41,59,0.7) !important; color: #f7df1e !important; border: 1px solid rgba(247,223,30,0.3) !important; border-radius: 8px !important; padding: 4px 10px !important; font-size: 12px !important; outline: none !important; }
+        body { top: 0px !important; position: static !important; }
+      `}</style>
       <header className="lg:hidden bg-[#1e293b] border-b border-slate-700 p-4 sticky top-0 z-50 flex justify-between items-center">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => changePage(null)}>
           <div className="bg-[#f7df1e] w-8 h-8 rounded flex items-center justify-center">
