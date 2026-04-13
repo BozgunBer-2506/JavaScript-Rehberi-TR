@@ -54,12 +54,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-100 flex flex-col lg:flex-row overflow-hidden font-sans">
-      <style>{`
-        .goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display: none !important; }
-        .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
-        .goog-te-combo { background-color: rgba(30,41,59,0.7) !important; color: #f7df1e !important; border: 1px solid rgba(247,223,30,0.3) !important; border-radius: 8px !important; padding: 4px 10px !important; font-size: 12px !important; outline: none !important; }
-        body { top: 0px !important; position: static !important; }
-      `}</style>
       <header className="lg:hidden bg-[#1e293b] border-b border-slate-700 p-4 sticky top-0 z-50 flex justify-between items-center">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => changePage(null)}>
           <div className="bg-[#f7df1e] w-8 h-8 rounded flex items-center justify-center">
@@ -112,7 +106,6 @@ function App() {
             <p className="text-[9px] font-bold text-slate-500 tracking-widest uppercase">
               Crafted by <a href="https://github.com/BozgunBer-2506" target="_blank" rel="noopener noreferrer" className="text-[#f7df1e] hover:underline">The_Bozgun</a> 2026
             </p>
-            <div id="google_translate_element" className="mt-3" />
           </div>
         </div>
       </aside>
@@ -149,13 +142,13 @@ function App() {
                   code({ inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '');
                     return !inline && match ? (
-                      <div translate="no" className="notranslate w-full overflow-hidden rounded-xl my-6 border border-slate-800 shadow-xl">
+                      <div className="w-full overflow-hidden rounded-xl my-6 border border-slate-800 shadow-xl">
                         <SyntaxHighlighter style={atomDark} language={match[1]} PreTag="div" customStyle={{ margin: 0, padding: '20px', background: '#0d1117', fontSize: '13px' }} {...props}>
                           {String(children).replace(/\n$/, '')}
                         </SyntaxHighlighter>
                       </div>
                     ) : (
-                      <code translate="no" className="notranslate bg-slate-800 text-[#f7df1e] px-1.5 py-0.5 rounded text-[12px] font-mono border border-slate-700/50" {...props}>{children}</code>
+                      <code className="bg-slate-800 text-[#f7df1e] px-1.5 py-0.5 rounded text-[12px] font-mono border border-slate-700/50" {...props}>{children}</code>
                     );
                   },
                 }}
